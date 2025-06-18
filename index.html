@@ -21,6 +21,7 @@
       min-height: 100vh;
       box-sizing: border-box;
     }
+
     .player-container {
       max-width: 600px;
       margin: 200px auto 0;
@@ -29,13 +30,15 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,50,0.7);
     }
+
     audio {
       width: 100%;
       outline: none;
     }
+
     .description {
       max-width: 800px;
-      margin: 400px auto 0; /* αυξημένο margin-top */
+      margin: 400px auto 0;
       background: rgba(0, 0, 50, 0.7);
       padding: 20px;
       border-radius: 10px;
@@ -45,16 +48,29 @@
       box-shadow: 0 0 15px rgba(0,0,50,0.5);
       color: #ddd;
     }
+
     .social-link {
       margin-top: 30px;
     }
+
     .social-link a {
       color: #00aced;
       font-weight: bold;
       text-decoration: none;
     }
+
     .social-link a:hover {
       text-decoration: underline;
+    }
+
+    /* Chat box */
+    #chat-box {
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      z-index: 9999;
     }
   </style>
 </head>
@@ -72,9 +88,39 @@
   </div>
 
   <div class="social-link">
-     <a href="https://www.facebook.com/groups/608013455649231/" target="_blank">Facebook Group </a>
+     <a href="https://www.facebook.com/groups/608013455649231/" target="_blank">Facebook Group</a>
+  </div>
+
+  <!-- Chat Box -->
+  <div id="chat-box">
+    <script id="cid0020000411238125417" data-cfasync="false" async
+      src="https://st.chatango.com/js/gz/emb.js"
+      style="width:300px;height:400px;">
+      {
+        "handle":"rudesounds",
+        "arch":"js",
+        "styles":{
+          "a":"000000",
+          "b":85,
+          "c":"FFFFFF",
+          "d":"FFFFFF",
+          "f":85,
+          "i":85,
+          "k":"000000",
+          "l":"000000",
+          "m":"000000",
+          "n":"FFFFFF",
+          "o":85,
+          "p":"10",
+          "q":"000000",
+          "r":85,
+          "fwtickm":1
+        }
+      }
+    </script>
   </div>
 
 </body>
 </html>
+
 
