@@ -31,9 +31,31 @@
       box-shadow: 0 0 20px rgba(0,0,50,0.7);
     }
 
-    audio {
-      width: 100%;
-      outline: none;
+    .custom-player {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    #playPauseBtn {
+      background-color: #004080;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    #playPauseBtn:hover {
+      background-color: #0066cc;
+    }
+
+    #volumeControl {
+      width: 150px;
     }
 
     .description {
@@ -51,16 +73,26 @@
 
     .social-link {
       margin-top: 30px;
+      font-weight: bold;
+      font-size: 1.2em;
     }
 
     .social-link a {
       color: #00aced;
-      font-weight: bold;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .social-link a:hover {
       text-decoration: underline;
+    }
+
+    .social-link img {
+      width: 24px;
+      height: 24px;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
     }
 
     /* Chat box */
@@ -72,12 +104,26 @@
       height: 400px;
       z-index: 9999;
     }
+
+    @media (max-width: 768px) {
+      .custom-player {
+        flex-direction: column;
+      }
+      #chat-box {
+        position: static;
+        margin: 40px auto 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="player-container">
-    <audio controls autoplay>
+    <div class="custom-player">
+      <button id="playPauseBtn">▶️</button>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" />
+    </div>
+    <audio id="radioPlayer">
       <source src="https://rudesounds.ismyradio.com:8443/stream" type="audio/mpeg" />
       Ο browser σας δεν υποστηρίζει τον ήχο.
     </audio>
@@ -88,7 +134,10 @@
   </div>
 
   <div class="social-link">
-     <a href="https://www.facebook.com/groups/608013455649231/" target="_blank">Facebook Group</a>
+     <a href="https://www.facebook.com/groups/608013455649231/" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+      Facebook Group
+    </a>
   </div>
 
   <!-- Chat Box -->
@@ -120,7 +169,28 @@
     </script>
   </div>
 
+  <script>
+    const player = document.getElementById("radioPlayer");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const volumeControl = document.getElementById("volumeControl");
+
+    playPauseBtn.addEventListener("click", () => {
+      if (player.paused) {
+        player.play();
+        playPauseBtn.textContent = "⏸️";
+      } else {
+        player.pause();
+        playPauseBtn.textContent = "▶️";
+      }
+    });
+
+    volumeControl.addEventListener("input", () => {
+      player.volume = volumeControl.value;
+    });
+  </script>
+
 </body>
 </html>
+
 
 
