@@ -8,8 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
     :root {
-      --neon-color: #f0f0f0;   
-      --neon-glow: #ffffff;    
+      --chrome-white: #f0f0f0;   
       --oxblood-wall: #4a0000; 
     }
 
@@ -28,11 +27,6 @@
       overflow-x: hidden;
     }
 
-    @keyframes neonPulse {
-      0% { box-shadow: 0 0 15px var(--neon-color), inset 0 0 10px var(--neon-color); border-color: var(--neon-color); }
-      100% { box-shadow: 0 0 35px var(--neon-glow), inset 0 0 20px var(--neon-glow); border-color: var(--neon-glow); }
-    }
-
     .hero-section {
       display: flex;
       flex-direction: column;
@@ -46,24 +40,23 @@
       max-width: 600px;
       width: 90%;
       border: 12px solid #fff;
-      box-shadow: 12px 12px 0px var(--neon-color);
+      /* Διατηρούμε μόνο τη σκιά χωρίς λάμψη */
+      box-shadow: 12px 12px 0px var(--chrome-white);
       transform: rotate(-3deg);
       transition: 0.4s ease;
     }
     
     .main-logo:hover { 
       transform: rotate(0deg) scale(1.05); 
-      box-shadow: 0 0 40px var(--neon-glow);
     }
 
-    /* PLAYER CONTAINER - TOTAL BLACK */
+    /* PLAYER ΧΩΡΙΣ NEON PULSE */
     .player-container {
       width: 550px;
       max-width: 90%;
       background: #000; 
       border-radius: 2px;
-      border: 4px solid var(--neon-color);
-      animation: neonPulse 2s infinite alternate;
+      border: 4px solid var(--chrome-white);
       height: 300px;
       overflow: hidden;
     }
@@ -72,7 +65,6 @@
       width: 100%;
       height: 100%;
       border: none;
-      /* ΤΟ ΜΑΓΙΚΟ ΦΙΛΤΡΟ: Μαύρο φόντο - Λευκά κουμπιά */
       filter: invert(1) grayscale(1) contrast(1.2) brightness(1.3);
     }
 
@@ -81,7 +73,7 @@
       margin: 120px auto 60px; 
       padding: 40px;
       background: rgba(0, 0, 0, 0.9);
-      border-top: 3px solid var(--neon-color);
+      border-top: 3px solid var(--chrome-white);
       font-family: 'Courier Prime', monospace;
       font-size: 1.1em;
       line-height: 1.6;
@@ -93,7 +85,7 @@
       max-width: 90%;
       margin-bottom: 100px;
       background: #000;
-      border: 2px solid var(--neon-color);
+      border: 2px solid var(--chrome-white);
       height: 380px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     }
@@ -157,7 +149,7 @@
   </div>
 
   <footer>
-    RUDE SOUNDS RADIO &copy; 2026 | CLOCKWORK SKINS CREW
+    RUDE SOUNDS &copy; 2025 | CLOCKWORK SKINS CREW
   </footer>
 
 </body>
