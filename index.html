@@ -37,11 +37,10 @@
     }
 
     .main-logo {
-      max-width: 600px;
+      max-width: 400px; /* Το μίκρυνα για να δείχνει καλύτερα */
       width: 90%;
       border: 12px solid #fff;
-      /* Διατηρούμε μόνο τη σκιά χωρίς λάμψη */
-      box-shadow: 12px 12px 0px var(--chrome-white);
+      box-shadow: 12px 12px 0px rgba(0,0,0,0.6);
       transform: rotate(-3deg);
       transition: 0.4s ease;
     }
@@ -50,7 +49,6 @@
       transform: rotate(0deg) scale(1.05); 
     }
 
-    /* PLAYER ΧΩΡΙΣ NEON PULSE */
     .player-container {
       width: 550px;
       max-width: 90%;
@@ -125,7 +123,8 @@
 <body>
 
   <div class="hero-section">
-    <img src="https://i.imgur.com/0M7F9uH.jpeg" alt="Rude Sounds Logo" class="main-logo">
+    <img src="https://i.imgur.com/MPLkicA.jpg" alt="Rude Sounds Logo" class="main-logo">
+    
     <div class="player-container">
       <iframe src="https://rudesounds.ismyradio.com/player" allow="autoplay" scrolling="no"></iframe>
     </div>
