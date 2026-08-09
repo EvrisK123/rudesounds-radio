@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rude Sounds Radio</title>
+  
+  <!-- SEO Title & Meta Tags -->
+  <title>Rude Sounds Radio | Oi!, Skinhead Reggae, Northern Soul & Ska</title>
+  <meta name="description" content="Rude Sounds Radio: Ο διαδικτυακός σταθμός της skinhead κουλτούρας. Live Oi!, Skinhead Reggae, Northern Soul και Ska." />
+  <meta name="keywords" content="Rude Sounds, Rude Sounds Radio, Oi, Skinhead Reggae, Northern Soul, Ska, skinhead culture, web radio Greece, rudesounds.gr" />
+
+  <!-- Open Graph Tags (Facebook / Instagram sharing) -->
+  <meta property="og:title" content="Rude Sounds Radio" />
+  <meta property="og:description" content="Ο διαδικτυακός σταθμός της skinhead κουλτούρας. Live Oi!, Skinhead Reggae, Northern Soul & Ska." />
+  <meta property="og:image" content="https://i.imgur.com/RvngBZz.jpg" />
+  <meta property="og:url" content="https://rudesounds.gr/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon Links (Imgur Direct Links) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.imgur.com/hTdj7z0.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/ZhN89Sa.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://i.imgur.com/gBEBdfc.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.imgur.com/r7LF4Ne.png">
 
   <style>
     /* Εισαγωγή γραμματοσειρών: Courier Prime & Permanent Marker */
@@ -92,7 +109,7 @@
 
     .description {
       max-width: 700px;
-      margin: 120px auto 60px;
+      margin: 120px auto 40px;
       padding: 40px;
       background: rgba(0, 0, 0, 0.9);
       border-top: 3px solid var(--chrome-white);
@@ -100,6 +117,35 @@
       font-size: 1.1em;
       line-height: 1.6;
       text-align: left;
+    }
+
+    /* Share Button Style */
+    .share-container {
+      margin-bottom: 60px;
+    }
+
+    .share-btn {
+      background: #000;
+      color: #fff;
+      border: 3px solid #fff;
+      padding: 12px 28px;
+      font-family: 'Courier Prime', monospace;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 5px 5px 0px #000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .share-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 5px 5px 0px var(--oxblood-wall);
+      transform: translateY(-2px);
     }
 
     .chat-wrapper {
@@ -141,7 +187,7 @@
     }
 
     .events-title {
-      font-family: 'Permanent Marker', cursive; /* Στυλ μαρκαδόρου / stencil */
+      font-family: 'Permanent Marker', cursive;
       font-size: 3.5rem;
       letter-spacing: 5px;
       margin-bottom: 25px;
@@ -213,7 +259,7 @@
       <img
         id="logoSlider"
         src="https://i.imgur.com/RvngBZz.jpg"
-        alt="Rude Sounds Radio"
+        alt="Rude Sounds Radio - Oi! Skinhead Reggae Northern Soul Web Radio"
         class="main-logo">
 
       <button class="arrow" onclick="changeImage(1)">
@@ -235,10 +281,17 @@
   <div class="description">
     <p>
       <strong>Rude Sounds:</strong>
-      Ο ήχος που μιλάει τη γλώσσα του δρόμου.
+      Ο διαδικτυακός σταθμός της skinhead κουλτούρας.
       Φέρνουμε κοντά τον αυθεντικό ήχο του Oi!,
-      της skinhead κουλτούρας και της reggae μουσικής.
+      του Skinhead Reggae, του Northern Soul και της Ska μουσικής.
     </p>
+  </div>
+
+  <!-- COPY LINK BUTTON -->
+  <div class="share-container">
+    <button class="share-btn" onclick="copyWebsiteLink()" id="shareBtn">
+      <span>🔗</span> COPY LINK
+    </button>
   </div>
 
   <div class="chat-wrapper">
@@ -256,14 +309,14 @@
        target="_blank"
        class="social-link">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-           alt="Facebook">
+           alt="Facebook - Rude Sounds Group">
     </a>
 
     <a href="https://www.instagram.com/rude_sounds69/"
        target="_blank"
        class="social-link">
       <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
-           alt="Instagram">
+           alt="Instagram - Rude Sounds 69">
     </a>
 
   </div>
@@ -273,7 +326,7 @@
     <h2 class="events-title">EVENTS</h2>
     <img
       src="https://i.imgur.com/0sL1kXp.jpeg"
-      alt="Skinhead Reggae Party Poster"
+      alt="Skinhead Reggae Party - Rude Sounds Event Poster"
       class="event-poster">
   </div>
 
@@ -282,6 +335,7 @@
   </footer>
 
   <script>
+    // Slider logic
     const images = [
       "https://i.imgur.com/RvngBZz.jpg",
       "https://i.imgur.com/MPLkicA.jpg"
@@ -301,6 +355,25 @@
       }
 
       document.getElementById("logoSlider").src = images[currentImage];
+    }
+
+    // Απλή & αδιάβροχη αντιγραφή του link https://rudesounds.gr/
+    function copyWebsiteLink() {
+      var dummy = document.createElement("input");
+      document.body.appendChild(dummy);
+      dummy.value = "https://rudesounds.gr/";
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+
+      var btn = document.getElementById('shareBtn');
+      if (btn) {
+        var originalText = btn.innerHTML;
+        btn.innerHTML = '✔ LINK COPIED!';
+        setTimeout(function() {
+          btn.innerHTML = originalText;
+        }, 2000);
+      }
     }
   </script>
 
