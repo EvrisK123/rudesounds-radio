@@ -4,22 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO Title & Meta Tags -->
   <title>Rude Sounds Radio | Oi!, Skinhead Reggae, Northern Soul & Ska</title>
-  <meta name="description" content="Rude Sounds Radio: Ο διαδικτυακός σταθμός της skinhead κουλτούρας.Παιζουμε Oi , Skinhead Reggae και Northern Soul." />
+  <meta name="description" content="Rude Sounds Radio: Ο διαδικτυακός σταθμός της skinhead κουλτούρας. Παίζουμε Oi!, Skinhead Reggae, Northern Soul και Ska." />
   <meta name="keywords" content="Rude Sounds, Rude Sounds Radio, Oi, Skinhead Reggae, Northern Soul, Ska, skinhead culture, web radio Greece, rudesounds.gr" />
+  <link rel="canonical" href="https://rudesounds.gr/" />
 
-  <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="duNia-XGgxNIDjk490DX_TsfTSd3JnwTAO3KqamIb8Q" />
 
-  <!-- Open Graph Tags (Facebook / Instagram sharing) -->
-  <meta property="og:title" content="Rude Sounds Radio" />
-  <meta property="og:description" content="Ο διαδικτυακός σταθμός της skinhead κουλτούρας.Oi, Skinhead Reggae & Northern Soul." />
+  <meta property="og:title" content="Rude Sounds Radio | Oi!, Skinhead Reggae, Northern Soul & Ska" />
+  <meta property="og:description" content="Ο διαδικτυακός σταθμός της skinhead κουλτούρας. Παίζουμε Oi!, Skinhead Reggae & Northern Soul." />
   <meta property="og:image" content="https://i.imgur.com/RvngBZz.jpg" />
   <meta property="og:url" content="https://rudesounds.gr/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rude Sounds Radio" />
+  <meta property="og:locale" content="el_GR" />
 
-  <!-- Structured Data / AI Explanation Schema (RadioStation) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rude Sounds Radio" />
+  <meta name="twitter:description" content="Ο διαδικτυακός σταθμός της skinhead κουλτούρας." />
+  <meta name="twitter:image" content="https://i.imgur.com/RvngBZz.jpg" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,27 +41,24 @@
   }
   </script>
 
-  <!-- Favicon Links (Imgur Direct Links) -->
   <link rel="icon" type="image/png" sizes="16x16" href="https://i.imgur.com/hTdj7z0.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/ZhN89Sa.png">
   <link rel="icon" type="image/png" sizes="512x512" href="https://i.imgur.com/gBEBdfc.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://i.imgur.com/r7LF4Ne.png">
 
   <style>
-    /* Εισαγωγή γραμματοσειρών: Courier Prime & Permanent Marker */
-    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Permanent+Marker&display=swap');
+    /* Εισαγωγή DIY Punk & Fanzine Γραμματοσειρών */
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Permanent+Marker&family=Special+Elite&display=swap');
 
     :root {
       --chrome-white: #f0f0f0;
-      --oxblood-wall: #4a0000;
+      --punk-red: #8b0000;
     }
 
     body {
       margin: 0;
       padding: 0;
       font-family: 'Impact', sans-serif;
-      background-image: url("https://www.transparenttextures.com/patterns/old-wall.png");
-      background-color: var(--oxblood-wall);
       color: white;
       text-align: center;
       display: flex;
@@ -65,6 +66,60 @@
       align-items: center;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
+      background-color: #050505;
+    }
+
+    /* BACKGROUND WITH BLUR EFFECT */
+    .bg-blurred {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+      background: url('https://i.imgur.com/1udcNKO.jpg') no-repeat center center;
+      background-size: cover;
+      filter: blur(12px) brightness(0.35) grayscale(50%);
+      transform: scale(1.05);
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(120, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.8) 90%);
+      pointer-events: none;
+    }
+
+    /* HEADER BANNER - ΔΙΟΡΘΩΜΕΝΟ ΠΕΡΙΘΩΡΙΟ (ΠΙΟ ΚΑΤΩ) */
+    .header-banner {
+      width: 100%;
+      padding: 60px 50px 10px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 5;
+    }
+
+    .welcome-title {
+      font-family: 'Special Elite', monospace;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #000;
+      background: #fff;
+      padding: 8px 18px;
+      text-transform: uppercase;
+      margin: 0;
+      display: inline-block;
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0px var(--punk-red), 10px 10px 0px #000;
+      transform: rotate(-2deg);
     }
 
     .hero-section {
@@ -72,14 +127,16 @@
       flex-direction: column;
       align-items: center;
       gap: 70px;
-      margin-top: 80px;
+      margin-top: 10px;
       width: 100%;
+      z-index: 2;
     }
 
     .slider-container {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
     }
 
     .main-logo {
@@ -88,23 +145,31 @@
       min-height: 350px;
       object-fit: contain;
       border: 12px solid #fff;
-      box-shadow: 12px 12px 0px rgba(0,0,0,0.6);
-      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+      transition: opacity 0.8s ease-in-out, transform 0.4s ease;
     }
 
     .main-logo:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .arrow {
-      background: #000;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.8);
       color: #fff;
-      border: 4px solid #fff;
-      font-size: 2rem;
+      border: 2px solid #fff;
+      font-size: 1rem;
       cursor: pointer;
-      padding: 10px 18px;
-      transition: 0.3s;
+      padding: 6px 10px;
+      transition: all 0.3s ease;
+      z-index: 10;
+      border-radius: 3px;
     }
+
+    .arrow-left { left: 15px; }
+    .arrow-right { right: 15px; }
 
     .arrow:hover {
       background: #fff;
@@ -119,6 +184,7 @@
       border: 4px solid var(--chrome-white);
       height: 300px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
     }
 
     .player-container iframe {
@@ -130,19 +196,22 @@
 
     .description {
       max-width: 700px;
-      margin: 120px auto 40px;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.9);
+      margin: 80px auto 40px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       border-top: 3px solid var(--chrome-white);
+      border-bottom: 3px solid var(--chrome-white);
       font-family: 'Courier Prime', monospace;
       font-size: 1.1em;
       line-height: 1.6;
       text-align: left;
+      z-index: 2;
     }
 
-    /* Share Button Style */
     .share-container {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
+      z-index: 2;
     }
 
     .share-btn {
@@ -156,7 +225,7 @@
       letter-spacing: 2px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 5px 5px 0px #000;
+      box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -165,8 +234,7 @@
     .share-btn:hover {
       background: #fff;
       color: #000;
-      box-shadow: 5px 5px 0px var(--oxblood-wall);
-      transform: translateY(-2px);
+      box-shadow: 5px 5px 0px var(--punk-red);
     }
 
     .chat-wrapper {
@@ -174,9 +242,16 @@
       max-width: 90%;
       margin-bottom: 80px;
       background: #000;
-      border: 2px solid var(--chrome-white);
+      border: 3px solid var(--chrome-white);
       height: 380px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+      z-index: 2;
+    }
+
+    .chat-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .social-links {
@@ -184,6 +259,7 @@
       display: flex;
       gap: 70px;
       justify-content: center;
+      z-index: 2;
     }
 
     .social-link img {
@@ -197,14 +273,14 @@
       transform: scale(1.1);
     }
 
-    /* Section Events */
     .events-section {
       width: 90%;
       max-width: 700px;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 2;
     }
 
     .events-title {
@@ -226,42 +302,34 @@
       height: auto;
       border: 8px solid #fff;
       box-shadow: 10px 10px 0px rgba(0,0,0,0.7);
-      transition: transform 0.3s ease;
-    }
-
-    .event-poster:hover {
-      transform: scale(1.02);
     }
 
     footer {
-      padding: 60px;
+      padding: 40px;
       background: #000;
       width: 100%;
-      color: #333;
+      color: #888;
       font-size: 0.8em;
       letter-spacing: 4px;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .header-banner {
+        justify-content: center;
+        padding: 30px 20px 10px;
+      }
+      .welcome-title {
+        font-size: 1.2rem;
+        transform: rotate(0deg);
+      }
     }
 
     @media (min-width: 1100px) {
       .hero-section {
         flex-direction: row;
         justify-content: center;
-        gap: 140px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .slider-container {
-        flex-direction: column;
-      }
-
-      .main-logo {
-        max-width: 90%;
-        min-height: auto;
-      }
-
-      .events-title {
-        font-size: 2.5rem;
+        gap: 120px;
       }
     }
   </style>
@@ -269,46 +337,32 @@
 
 <body>
 
+  <div class="bg-blurred"></div>
+  <div class="bg-overlay"></div>
+
+  <header class="header-banner">
+    <h1 class="welcome-title">RUDE SOUNDS RADIO</h1>
+  </header>
+
   <div class="hero-section">
-
     <div class="slider-container">
-
-      <button class="arrow" onclick="changeImage(-1)">
-        ❮
-      </button>
-
-      <img
-        id="logoSlider"
-        src="https://i.imgur.com/RvngBZz.jpg"
-        alt="Rude Sounds Radio - Oi! Skinhead Reggae Northern Soul Web Radio"
-        class="main-logo">
-
-      <button class="arrow" onclick="changeImage(1)">
-        ❯
-      </button>
-
+      <button class="arrow arrow-left" onclick="changeImage(-1)">❮</button>
+      <img id="logoSlider" src="https://i.imgur.com/RvngBZz.jpg" alt="Rude Sounds Radio Logo" class="main-logo" loading="eager">
+      <button class="arrow arrow-right" onclick="changeImage(1)">❯</button>
     </div>
 
     <div class="player-container">
-      <iframe
-        src="https://rudesounds.ismyradio.com/player"
-        allow="autoplay"
-        scrolling="no">
-      </iframe>
+      <iframe src="https://rudesounds.ismyradio.com/player" allow="autoplay" scrolling="no"></iframe>
     </div>
-
   </div>
 
   <div class="description">
     <p>
-      <strong>Rude Sounds:</strong>
-      Ο ήχος που μιλάει τη γλώσσα του δρόμου. 
-	  Φέρνουμε κοντά τον αυθεντικό ήχο του Oi!, της skinhead κουλτούρας
-	  και της reggae μουσικής.
+      <strong>Rude Sounds:</strong> Ο ήχος που μιλάει τη γλώσσα του δρόμου. 
+      Φέρνουμε κοντά τον αυθεντικό ήχο του Oi!, της skinhead κουλτούρας και της reggae μουσικής.
     </p>
   </div>
 
-  <!-- COPY LINK BUTTON -->
   <div class="share-container">
     <button class="share-btn" onclick="copyWebsiteLink()" id="shareBtn">
       <span>🔗</span> COPY LINK
@@ -316,39 +370,21 @@
   </div>
 
   <div class="chat-wrapper">
-    <iframe
-      src="https://www5.cbox.ws/box/?boxid=961981&boxtag=RmXNNb"
-      width="100%"
-      height="100%"
-      frameborder="0">
-    </iframe>
+    <iframe src="https://www5.cbox.ws/box/?boxid=961981&boxtag=RmXNNb" width="100%" height="100%" frameborder="0"></iframe>
   </div>
 
   <div class="social-links">
-
-    <a href="https://www.facebook.com/groups/608013455649231/"
-       target="_blank"
-       class="social-link">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-           alt="Facebook - Rude Sounds Group">
+    <a href="https://www.facebook.com/groups/608013455649231/" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook - Rude Sounds Group" loading="lazy">
     </a>
-
-    <a href="https://www.instagram.com/rude_sounds69/"
-       target="_blank"
-       class="social-link">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
-           alt="Instagram - Rude Sounds 69">
+    <a href="https://www.instagram.com/rude_sounds69/" target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram - Rude Sounds 69" loading="lazy">
     </a>
-
   </div>
 
-  <!-- ΕΝΟΤΗΤΑ EVENTS -->
   <div class="events-section">
     <h2 class="events-title">EVENTS</h2>
-    <img
-      src="https://i.imgur.com/0sL1kXp.jpeg"
-      alt="Skinhead Reggae Party - Rude Sounds Event Poster"
-      class="event-poster">
+    <img src="https://i.imgur.com/0sL1kXp.jpeg" alt="Rude Sounds Event Poster" class="event-poster" loading="lazy">
   </div>
 
   <footer>
@@ -356,44 +392,45 @@
   </footer>
 
   <script>
-    // Slider logic
     const images = [
       "https://i.imgur.com/RvngBZz.jpg",
       "https://i.imgur.com/MPLkicA.jpg"
     ];
-
     let currentImage = 0;
 
     function changeImage(direction) {
       currentImage += direction;
-
-      if (currentImage >= images.length) {
-        currentImage = 0;
-      }
-
-      if (currentImage < 0) {
-        currentImage = images.length - 1;
-      }
-
+      if (currentImage >= images.length) currentImage = 0;
+      if (currentImage < 0) currentImage = images.length - 1;
       document.getElementById("logoSlider").src = images[currentImage];
     }
 
-    // Απλή & αδιάβροχη αντιγραφή του link https://rudesounds.gr/
-    function copyWebsiteLink() {
-      var dummy = document.createElement("input");
-      document.body.appendChild(dummy);
-      dummy.value = "https://rudesounds.gr/";
-      dummy.select();
-      document.execCommand("copy");
-      document.body.removeChild(dummy);
+    // Αλλαγή εικόνας κάθε 15 δευτερόλεπτα
+    setInterval(() => changeImage(1), 15000);
 
-      var btn = document.getElementById('shareBtn');
+    function copyWebsiteLink() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText("https://rudesounds.gr/").then(() => {
+          showCopySuccess();
+        }).catch(err => {
+          console.error("Failed to copy link: ", err);
+        });
+      } else {
+        const tempInput = document.createElement("input");
+        tempInput.value = "https://rudesounds.gr/";
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        showCopySuccess();
+      }
+    }
+
+    function showCopySuccess() {
+      const btn = document.getElementById('shareBtn');
       if (btn) {
-        var originalText = btn.innerHTML;
         btn.innerHTML = '✔ LINK COPIED!';
-        setTimeout(function() {
-          btn.innerHTML = originalText;
-        }, 2000);
+        setTimeout(() => { btn.innerHTML = '<span>🔗</span> COPY LINK'; }, 2000);
       }
     }
   </script>
